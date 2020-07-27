@@ -378,6 +378,7 @@ DropDownPicker.defaultProps = {
     onOpen: () => {},
     onClose: () => {},
     onChangeItem: () => {},
+    showSelectedValueWithIcon: false
 };
 
 DropDownPicker.propTypes = {
@@ -416,7 +417,7 @@ DropDownPicker.propTypes = {
     onOpen: PropTypes.func,
     onClose: PropTypes.func,
     onChangeItem: PropTypes.func,
-    showSelectedValueWithIcon: false
+    showSelectedValueWithIcon: PropTypes.bool
 };
 
 const styles = StyleSheet.create({

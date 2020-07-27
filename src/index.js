@@ -207,7 +207,7 @@ class DropDownPicker extends React.Component {
 
     render() {
         const { multiple, disabled } = this.state.props;
-        const { placeholder, scrollViewProps } = this.props;
+        const { placeholder, scrollViewProps, showSelectedValueWithIcon } = this.props;
         const isPlaceholderActive = this.state.choice.label === null;
         const label = isPlaceholderActive ? (placeholder) : this.state.choice.label;
         const placeholderStyle = isPlaceholderActive && this.props.placeholderStyle;
@@ -236,7 +236,7 @@ class DropDownPicker extends React.Component {
                     ]}
                 >
                     <View style={[styles.dropDownDisplay]}>
-                        {this.state.choice.icon && ! multiple && this.state.choice.icon()}
+                        {showSelectedValueWithIcon && this.state.choice.icon && ! multiple && this.state.choice.icon()}
                         <Text style={[
                             this.props.labelStyle,
                             placeholderStyle, {opacity, flex: 1, marginRight: 5},
@@ -415,7 +415,8 @@ DropDownPicker.propTypes = {
     max: PropTypes.number,
     onOpen: PropTypes.func,
     onClose: PropTypes.func,
-    onChangeItem: PropTypes.func
+    onChangeItem: PropTypes.func,
+    showSelectedValueWithIcon: false
 };
 
 const styles = StyleSheet.create({
